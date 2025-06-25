@@ -43,7 +43,7 @@ client.on("messageCreate", async (message) => {
   const needsVC = ["play", "pause", "resume", "skip", "queue", "volume"];
 
   if (!voice && needsVC.includes(command)) {
-    return message.reply("🚫 You must be in a voice channel to use this command.");
+    return message.reply("🚫 dkhl lvoice b3da azbu.");
   }
 
   let player = manager.players.get(message.guild.id);
@@ -62,7 +62,7 @@ client.on("messageCreate", async (message) => {
       if (!args.length) return message.reply("🎶 Provide a song name or URL.");
       const search = args.join(" ");
       const result = await manager.search(search);
-      if (!result.tracks.length) return message.reply("🔍 No results found.");
+      if (!result.tracks.length) return message.reply("🔍 makaynx had l9lawi.");
 
       const track = result.tracks[0];
       player.queue.add(track);
@@ -72,28 +72,28 @@ client.on("messageCreate", async (message) => {
     }
 
     case "pause": {
-      if (!player?.playing) return message.reply("⚠️ Nothing is playing.");
+      if (!player?.playing) return message.reply("⚠️ makayn walo .");
       player.pause(true);
       message.reply("⏸️ Paused.");
       break;
     }
 
     case "resume": {
-      if (!player?.paused) return message.reply("⚠️ Player is not paused.");
+      if (!player?.paused) return message.reply("⚠️ ma7absx ana ga3.");
       player.pause(false);
       message.reply("▶️ Resumed.");
       break;
     }
 
     case "skip": {
-      if (!player || !player.queue.size) return message.reply("⚠️ No tracks to skip.");
+      if (!player || !player.queue.size) return message.reply("⚠️ chbaghi tskippi l9lawi ra makayn walo.");
       await player.stop();
       message.reply("⏭️ Skipped.");
       break;
     }
 
     case "queue": {
-      if (!player || !player.queue.current) return message.reply("📭 Queue is empty.");
+      if (!player || !player.queue.current) return message.reply("📭 Queue mafiha walo .");
       const current = `🎶 Now Playing: **${player.queue.current.title}**`;
       const upcoming = player.queue.slice(0, 5).map((t, i) => `**${i + 1}.** ${t.title}`).join("\n") || "No upcoming tracks.";
       message.reply(`${current}\n\n🔜 Upcoming:\n${upcoming}`);
@@ -103,7 +103,7 @@ client.on("messageCreate", async (message) => {
     case "volume": {
       const vol = parseInt(args[0], 10);
       if (isNaN(vol) || vol < 0 || vol > 100) {
-        return message.reply("🔊 Provide a volume between 0 and 100.");
+        return message.reply("🔊 ndiro sot mabin 0 w 100.");
       }
       player.setVolume(vol);
       message.reply(`🔊 Volume set to **${vol}%**`);
