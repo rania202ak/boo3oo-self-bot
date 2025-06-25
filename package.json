@@ -1,0 +1,16 @@
+{
+  "name": "discord-music-selfbot",
+  "version": "1.0.0",
+  "description": "A Discord selfbot that plays music using Lavalink",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@lavaclient/discord": "^4.0.1",
+    "@lavaclient/queue": "^4.0.1",
+    "discord.js-selfbot-v13": "^2.14.1",
+    "dotenv": "^16.4.5"
+  }
+}
